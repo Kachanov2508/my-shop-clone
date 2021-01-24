@@ -12,6 +12,7 @@ html {
 
 body {
   margin: 0;
+  background-color: #f6f6f6;
 }
 
 .App {
@@ -25,4 +26,8 @@ figure {
 .container {
   max-width: 1600px;
   margin: 0 auto;
+}
+
+.bgWhite {
+  background-color: #ffffff;
 }

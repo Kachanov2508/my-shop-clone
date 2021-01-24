@@ -1,19 +1,20 @@
 import styled from "styled-components";
 
-const Wrapper = styled.div`
-  width: 180px;
-
-  & figure {
-    width: 150px;
-    height: 160px;
-
-    & img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+const Bcg = styled.div`
+  border-radius: 10px;
+  & h2 {
+    padding: 20px 0 10px 20px;
+    font-size: 20px;
+    color: #2a3d48;
   }
 `;
 
-export { Wrapper };
+const Wrapper = styled.div`
+  display: flex;
+
+  & h2 {
+    margin: 20px;
+  }
+`;
+
+export { Wrapper, Bcg };

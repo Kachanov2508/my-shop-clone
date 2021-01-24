@@ -1,29 +1,23 @@
 import React from "react";
-import { Wrapper } from "./ProductSlider.styled";
+import Product from "./Product/Product";
+import { Bcg, Wrapper } from "./ProductSlider.styled";
 
 const ProductSlider = () => {
   return (
     <div className="container">
-      <Wrapper>
-        <figure>
-          <img
-            src="https://static.my-shop.ru/product/0/390/3896545_128.jpg"
-            alt=""
-          />
-        </figure>
-        <div>
-          <h4>Name Product</h4>
-          <h5>Category Product</h5>
-        </div>
-        <div>
-          <p>Price</p>
-          <p>Old Price</p>
-        </div>
-        <div>
-          <button>В корзину</button>
-          <button>Like</button>
-        </div>
-      </Wrapper>
+      <Bcg className="bgWhite">
+        <h2>Игрушки и детское творчество</h2>
+        <Wrapper>
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+        </Wrapper>
+      </Bcg>
     </div>
   );
 };
