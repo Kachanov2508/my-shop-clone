@@ -1,0 +1,19 @@
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  & div {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+
+    & figure {
+      margin-right: 10px;
+    }
+  }
+`;
+
+export default Wrapper;

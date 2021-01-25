@@ -1,11 +1,12 @@
 import React from "react";
-import classes from "./Informer.module.scss";
+import Wrapper from "./Informer.styled";
+
 
 const Informer = () => {
   return (
-    <div className={classes.informer}>
+    <Wrapper>
       <p>СКИДКА 10% НОВЫМ КЛИЕНТАМ + ПРОМОКОД "ЯНВАРЬ" НА 5% ДОПСКИДКИ!</p>
-    </div>
+    </Wrapper>
   );
 };
 

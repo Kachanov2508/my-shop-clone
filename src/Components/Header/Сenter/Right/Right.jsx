@@ -1,13 +1,14 @@
 import React from "react";
-import classes from "./Right.module.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 
+import Wrapper from "./Right.styled";
+
 const Right = () => {
   return (
-    <div className={classes.right}>
+    <Wrapper>
       <div>
         <figure>
           <FontAwesomeIcon icon={faUser} size="lg" color="#783cbd" />
@@ -20,7 +21,7 @@ const Right = () => {
         </figure>
         <span>Корзина</span>
       </div>
-    </div>
+    </Wrapper>
   );
 };
 

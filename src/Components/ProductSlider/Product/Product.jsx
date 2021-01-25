@@ -1,7 +1,5 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Button, Price, Title, Wrapper } from "./Product.styled";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 const Product = () => {
   return (
