@@ -1,4 +1,5 @@
 import React from "react";
+import { getProduct } from "./Components/api/api";
 import Header from "./Components/Header/Header";
 import ProductSlider from "./Components/ProductSlider/ProductSlider";
 import Slider from "./Components/Slider/Slider";
@@ -6,13 +7,7 @@ import "./styles.css";
 
 export default function App() {
 
-  const getData = () => {
-    fetch("http://localhost:3000/categories")
-      .then(response => response.json())
-      .then(data => console.log(data));
-  }
-
-  getData();
+  getProduct();
 
   return (
     <div className="App">
