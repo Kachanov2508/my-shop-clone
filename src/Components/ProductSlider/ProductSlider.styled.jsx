@@ -11,10 +11,28 @@ const Bcg = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
+  overflow: hidden;
+  position: relative;
 
   & h2 {
     margin: 20px;
   }
 `;
 
-export { Wrapper, Bcg };
+const Prev = styled.button`
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  z-index: 999;
+`;
+
+const Next = styled.button`
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 999;
+`;
+
+export { Wrapper, Bcg, Next, Prev };

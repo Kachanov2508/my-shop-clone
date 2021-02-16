@@ -7,6 +7,7 @@ const Wrapper = styled.div`
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  transform: translateX(-${props => props.translateX}px);
 
   &:hover {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);

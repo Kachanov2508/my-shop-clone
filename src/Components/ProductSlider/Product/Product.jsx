@@ -1,9 +1,9 @@
 import React from "react";
 import { Button, Price, Title, Wrapper } from "./Product.styled";
 
-const Product = () => {
+const Product = (props) => {
   return (
-    <Wrapper>
+    <Wrapper translateX={props.translateX}>
       <figure>
         <img
           src="https://static.my-shop.ru/product/0/390/3896545_128.jpg"
