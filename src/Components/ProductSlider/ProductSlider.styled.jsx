@@ -21,18 +21,44 @@ const Wrapper = styled.div`
 
 const Prev = styled.button`
   position: absolute;
-  top: 50%;
+  top: 32%;
   left: 20px;
-  transform: translateY(-50%);
   z-index: 999;
+  background-color: #ffffff;
+  border: none;
+  box-shadow: 2px 5px 10px rgb(0 0 0 / 20%);
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  outline: none;
+  transition: all .3s ease-in-out;
+  color: gray;
+  
+  &:hover {
+    background-color: #783cbd;
+    color: #ffffff;
+  }
 `;
 
 const Next = styled.button`
   position: absolute;
-  top: 50%;
+  top: 32%;
   right: 20px;
-  transform: translateY(-50%);
   z-index: 999;
+  background-color: #ffffff;
+  border: none;
+  box-shadow: 2px 5px 10px rgb(0 0 0 / 20%);
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  outline: none;
+  transition: all .3s ease-in-out;
+  color: gray;
+  
+  &:hover {
+    background-color: #783cbd;
+    color: #ffffff;
+  }
 `;
 
 export { Wrapper, Bcg, Next, Prev };

@@ -6,17 +6,19 @@ const Product = (props) => {
     <Wrapper translateX={props.translateX}>
       <figure>
         <img
-          src="https://static.my-shop.ru/product/0/390/3896545_128.jpg"
+          src={Array.isArray(props.offer.picture) ? props.offer.picture[0] : props.offer.picture}
           alt=""
         />
       </figure>
       <Title>
-        <h4>Вот такая карусель</h4>
-        <h5>Айрис-Пресс</h5>
+        <div>
+          <h4>{props.offer.name}</h4>
+        </div>
+        <h5>{props.offer.market_category}</h5>
       </Title>
       <Price>
-        <p>234 ₽</p>
-        <p>293 ₽</p>
+        <p>{props.offer.price} ₽</p>
+        <p>{props.offer.oldprice} ₽</p>
       </Price>
       <Button>
         <button>В корзину</button>

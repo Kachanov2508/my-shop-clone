@@ -3,27 +3,30 @@ import { useState } from "react";
 import Product from "./Product/Product";
 import { Bcg, Wrapper, Next, Prev } from "./ProductSlider.styled";
 
-const ProductSlider = () => {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-  const items = 16;
-  const [translate, setTranslite] = useState(0);
 
-  const showItems = () => {
-    let arr = [];
-    for(let i = 0; i < items; i++) {
-      arr.push(<Product translateX={translate} />)
-    }
-    return arr;
-  }
+const ProductSlider = (props) => {
+
+  const [translate, setTranslite] = useState(1 * props.offers.length);
+
+  // const test = () => {
+
+  //   props.offers.length
+
+  //   props.offers.map(offer => <Product translateX={translate} offer={offer} key={offer.ISBN} />)
+  // }
+  console.log(translate);
 
   return (
     <div className="container">
       <Bcg className="bgWhite">
         <h2>Игрушки и детское творчество</h2>
         <Wrapper>
-          <Prev onClick={() => setTranslite(translate - 600)}>Prev</Prev>
-            {showItems().map(item => item)}
-          <Next onClick={() => setTranslite(translate + 600)}>Next</Next>
+          <Prev onClick={() => setTranslite(translate - props.translateX)}><FontAwesomeIcon icon={faAngleLeft} size="2x" /></Prev>
+            {props.offers.map(offer => <Product translateX={translate} offer={offer} key={offer.ISBN} />)}
+          <Next onClick={() => setTranslite(props.offers.length - (props.offers.length - 3))}><FontAwesomeIcon icon={faAngleRight} size="2x" /></Next>
         </Wrapper>
       </Bcg>
     </div>
