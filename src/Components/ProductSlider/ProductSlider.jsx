@@ -9,14 +9,12 @@ import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 const ProductSlider = (props) => {
 
-  const [translate, setTranslite] = useState(1 * props.offers.length);
+  const [translate, setTranslite] = useState(0);
 
-  // const test = () => {
+  if((props.offers.length - translate) === 3) {
+    setTranslite(3)
+  }
 
-  //   props.offers.length
-
-  //   props.offers.map(offer => <Product translateX={translate} offer={offer} key={offer.ISBN} />)
-  // }
   console.log(translate);
 
   return (
@@ -24,9 +22,9 @@ const ProductSlider = (props) => {
       <Bcg className="bgWhite">
         <h2>Игрушки и детское творчество</h2>
         <Wrapper>
-          <Prev onClick={() => setTranslite(translate - props.translateX)}><FontAwesomeIcon icon={faAngleLeft} size="2x" /></Prev>
-            {props.offers.map(offer => <Product translateX={translate} offer={offer} key={offer.ISBN} />)}
-          <Next onClick={() => setTranslite(props.offers.length - (props.offers.length - 3))}><FontAwesomeIcon icon={faAngleRight} size="2x" /></Next>
+          <Prev onClick={() => setTranslite(translate - 3)}><FontAwesomeIcon icon={faAngleLeft} size="2x" /></Prev>
+            {props.offers.map(offer => <Product translateX={translate * 200} offer={offer} key={offer.ISBN} />)}
+          <Next onClick={() => setTranslite(translate + 3)}><FontAwesomeIcon icon={faAngleRight} size="2x" /></Next>
         </Wrapper>
       </Bcg>
     </div>
