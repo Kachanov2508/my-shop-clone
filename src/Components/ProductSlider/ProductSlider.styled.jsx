@@ -35,8 +35,8 @@ const Prev = styled.button`
   color: gray;
   
   &:hover {
-    background-color: #783cbd;
-    color: #ffffff;
+    background-color: ${props => props.active};
+    color: ${props => props.color};
   }
 `;
 
@@ -56,8 +56,8 @@ const Next = styled.button`
   color: gray;
   
   &:hover {
-    background-color: #783cbd;
-    color: #ffffff;
+    background-color: ${props => props.active};
+    color: ${props => props.color};
   }
 `;
 
