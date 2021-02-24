@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const Categories = () => {
 	const [categories, setCategory] = useState([]);
+	const [show, setShow] = useState(0)
 
 	useEffect(() => {
 		fetch("http://localhost:3000/categories")
@@ -18,28 +19,25 @@ const Categories = () => {
 			};
 		});
 
-	const ppp = categories.filter((item) =>
-		parent.filter((i) => i.id === item.parentId)
-	);
-
-	console.log(parent);
+	const subCategories = () => {
+		console.log(show)
+		if (show) return parent[show].child.map(item => item.name)
+	}
 
 	return (
-		<div style={{ margin: "40px" }}>
-			<ul>
-				{parent.map((item) => {
+		<div style={{ display: "flex" }}>
+			<div>
+				{parent.map((item, index) => {
 					return (
-						<li key={item.id}>
-							<h2>{item.heading}</h2>
-							<ul>
-								{item.child.map((item) => (
-									<li>{item.name}</li>
-								))}
-							</ul>
-						</li>
+						<div key={item.id}>
+							<h2 onMouseOver={() => setShow(index)}>{item.heading}</h2>
+						</div>
 					);
 				})}
-			</ul>
+			</div>
+			<div>
+				{subCategories()}
+			</div>
 		</div>
 	);
 };
