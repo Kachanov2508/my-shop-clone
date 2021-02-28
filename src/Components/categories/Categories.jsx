@@ -21,7 +21,7 @@ const Categories = () => {
 
 	const subCategories = () => {
 		console.log(show)
-		if (show) return parent[show].child.map(item => item.name)
+		if (show) return parent[show].child.map(item => <div>{item.name}</div>)
 	}
 
 	return (
