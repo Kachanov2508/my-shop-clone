@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-const Categories = () => {
+const Categories = async () => {
 	const [categories, setCategory] = useState([]);
 	const [show, setShow] = useState(0)
 
 	useEffect(() => {
-		fetch("http://localhost:3000/categories")
+		fetch("https://my-shop-a8555-default-rtdb.firebaseio.com/categories.json")
 			.then((response) => response.json())
 			.then((data) => setCategory(data));
 	}, []);
@@ -15,14 +15,15 @@ const Categories = () => {
 		.map((item) => {
 			return {
 				heading: item.name,
-				child: categories.filter((child) => item.id === child.parentId),
+				child: categories.filter((child) => item.id === child.parentId)
 			};
 		});
 
 	const subCategories = () => {
-		console.log(show)
-		if (show) return parent[show].child.map(item => item.name)
+		if (show) return parent[show].child.map(item => <div>{item.name}</div>)
 	}
+
+
 
 	return (
 		<div style={{ display: "flex" }}>
