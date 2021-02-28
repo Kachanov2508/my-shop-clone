@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Categories = async () => {
+const Categories = () => {
 	const [categories, setCategory] = useState([]);
 	const [show, setShow] = useState(0)
 
@@ -15,15 +15,14 @@ const Categories = async () => {
 		.map((item) => {
 			return {
 				heading: item.name,
-				child: categories.filter((child) => item.id === child.parentId)
+				child: categories.filter((child) => item.id === child.parentId),
 			};
 		});
 
 	const subCategories = () => {
-		if (show) return parent[show].child.map(item => <div>{item.name}</div>)
+		console.log(show)
+		if (show) return parent[show].child.map(item => item.name)
 	}
-
-
 
 	return (
 		<div style={{ display: "flex" }}>
