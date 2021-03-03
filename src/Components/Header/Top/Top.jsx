@@ -9,7 +9,7 @@ import { Wrapper, Heading, Phone, Menu, Sity } from "./Top.styled"
 const Top = () => {
   return (
     <Wrapper>
-      <Heading>
+      <Heading className="container">
         <Sity>
           <figure>
             <FontAwesomeIcon icon={faMapMarkerAlt} size="lg" color="#783cbd" />

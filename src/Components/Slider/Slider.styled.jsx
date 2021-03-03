@@ -5,6 +5,7 @@ let Wrapper = styled.div`
   display: flex;
   overflow: hidden;
   position: relative;
+  z-index: 99;
 
   & div {
     width: 100%;

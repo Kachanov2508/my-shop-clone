@@ -5,7 +5,6 @@ import Header from '../Header/Header';
 const Catalogue = () => {
     return (
         <div>
-            <Header />
             <Categories />
         </div>
     )

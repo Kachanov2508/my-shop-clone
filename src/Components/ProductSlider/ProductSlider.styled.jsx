@@ -23,7 +23,7 @@ const Prev = styled.button`
   position: absolute;
   top: 32%;
   left: 20px;
-  z-index: 999;
+  z-index: 99;
   background-color: #ffffff;
   border: none;
   box-shadow: 2px 5px 10px rgb(0 0 0 / 20%);
@@ -44,7 +44,7 @@ const Next = styled.button`
   position: absolute;
   top: 32%;
   right: 20px;
-  z-index: 999;
+  z-index: 99;
   background-color: #ffffff;
   border: none;
   box-shadow: 2px 5px 10px rgb(0 0 0 / 20%);

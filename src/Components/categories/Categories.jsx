@@ -1,66 +1,112 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faWaveSquare, faPercent, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+import { faStar } from '@fortawesome/free-regular-svg-icons';
+
+import cls from './Categories.module.css'
+
+import ShowCategories from '../../context';
+import IsFetching from "../isFetching/IsFetching";
 
 const Categories = () => {
-	const [categories, setCategory] = useState([]);
+	const [categories, setCategories] = useState([]);
 	const [show, setShow] = useState(0);
+	const [fetching, setFetching] = useState(true);
+
+	const { setShowCategories } = useContext(ShowCategories)
 
 	useEffect(() => {
-		fetch("https://my-shop-a8555-default-rtdb.firebaseio.com/categories.json")
-			.then((response) => response.json())
-			.then((data) => setCategory(data));
+		setFetching(true);
+		setTimeout(() => {
+			fetch("https://my-shop-a8555-default-rtdb.firebaseio.com/categories.json")
+				.then((response) => response.json())
+				.then((data) => setCategories(data));
+			setFetching(false);
+		}, 1000)
 	}, []);
 
-	const getParentCategories = (categories) => {
-		return categories.filter(item => !item.parentId);
-	}
-
-	const getSubCategories = (categories, parentCategory) => {
-		return categories.filter(category => category.parentId === parentCategory.id)
-	}
-
-	const parent = getParentCategories(categories)
+	const parent = categories.filter(item => !item.parentId)
 		.map(item => {
 			return {
 				heading: item.name,
-				child: getSubCategories(categories, item)
+				child: categories.filter(category => category.parentId === item.id)
 					.map(item => {
 						return {
 							heading: item.name,
-							child: getSubCategories(categories, item)
+							child: categories.filter(category => category.parentId === item.id)
 						}
 					})
 			};
 		});
 
-
 	const subCategories = () => {
 		if (parent.length > 0) {
-			return parent[show].child.map(item => {
+			return parent[show].child.map((item, index) => {
 				return (
-					<div style={{ marginBottom: "20px", breakInside: "avoid" }}>
-						<h3 key={item.id}>{item.heading}</h3>
-						{item.child.map(item => <p>{item.name}</p>)}
+					<div className={cls.group} key={index}>
+						<h3>{item.heading}</h3>
+						{item.child.map(item => <p key={item.name}>{item.name}</p>)}
 					</div>
 				)
 			})
 		}
 	}
 
+	const hoverTitle = (index) => {
+		setShow(index);
+		const titles = Array.from(document.getElementsByClassName(cls.title));
+
+		// Удалить класс activ у всех элементов
+		titles.forEach(item => item.classList.remove(cls.active));
+
+		// Добавить класс activ при навдении
+		titles[index].classList.add(cls.active);
+	}
+
 	return (
-		<div style={{ display: "grid", gridTemplateColumns: "1fr 2fr" }}>
-			<div>
-				{parent.map((item, index) => {
-					return (
-						<div key={item.id}>
-							<h2 onMouseOver={() => setShow(index)}>{item.heading}</h2>
+		<>
+			<div className={cls.bcg} onClick={() => setShowCategories(false)}></div>
+			<div className={cls.box}>
+				<div className={cls.right}>
+					<IsFetching fetching={fetching} />
+					{parent.map((item, index) => {
+						return (<p onMouseOver={() => hoverTitle(index)} key={index} className={cls.title}>
+							{item.heading}
+						</p>)
+					}
+					)}
+				</div>
+				<div className={cls.left}>
+					<div className={cls.header}>
+						<div className={cls.headerLeft}>
+							<div>
+								<FontAwesomeIcon icon={faPercent} />
+								<p>Акции в разделе</p>
+							</div>
+							<div>
+								<FontAwesomeIcon icon={faWaveSquare} />
+								<p>Гид по разделу</p>
+							</div>
+							<div>
+								<FontAwesomeIcon icon={faStar} />
+								<p>Популярные бренды</p>
+							</div>
 						</div>
-					);
-				})}
+						<div className={cls.headerRight} onClick={() => setShowCategories(false)}>
+							<FontAwesomeIcon icon={faTimesCircle} />
+						</div>
+					</div>
+					<div className={cls.body}>
+						<IsFetching fetching={fetching} />
+						<div>
+							{subCategories()}
+						</div>
+					</div>
+				</div>
 			</div>
-			<div style={{ columnCount: "3" }}>
-				{subCategories()}
-			</div>
-		</div>
+		</>
+
 	);
 };
 
