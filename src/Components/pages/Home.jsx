@@ -21,9 +21,9 @@ const Home = () => {
     ];
     const slides2 = [
         "https://static.my-shop.ru/object/banner/1/3249_984x163.png",
-        "https://static.my-shop.ru/object/banner/1/3250_984x163.png",
+        "https://static.my-shop.ru/object/banner/1/3250_984x163.png", 
         "https://static.my-shop.ru/object/banner/1/3252_984x163.png",
-        "https://static.my-shop.ru/object/banner/1/3206_984x163.png",
+        "https://static.my-shop.ru/object/banner/1/3206_984x163.png", 
     ];
 
     const random = Math.floor(Math.random() * Math.floor(1000));
