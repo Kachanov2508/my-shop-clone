@@ -1,0 +1,162 @@
+.bcg {
+    background-color: #ffffff;
+}
+
+.top {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    justify-content: space-between;
+    line-height: 2;
+    grid-area: top;
+    border-bottom: 2px solid #f1f1f1;
+    padding: 50px 0;
+
+    & .column {
+        & p {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2a3d48;
+            margin-bottom: 5px;
+        }
+
+        & ul {
+            list-style: none;
+        }
+    }
+}
+
+@media (max-width: 1050px) {
+    .top {
+        grid-template-columns: repeat(2, max-content);
+        grid-template-rows: 1fr 1fr;
+        justify-content: space-around;
+
+        & .column {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .top {
+        grid-template-columns: max-content;
+        grid-template-rows: repeat(4, max-content);
+        justify-content: center;
+        align-content: center;
+    }
+}
+
+.center {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    justify-content: space-between;
+    grid-template-areas: "logo phone social";
+    padding: 40px 0;
+    border-bottom: 2px solid #f1f1f1;
+
+    & div {
+        display: flex;
+        align-items: center;
+    }
+
+    & .logo {
+        display: flex;
+        justify-content: center;
+        grid-area: logo;
+
+        & h2 {
+            color: rgb(120, 60, 189);
+            text-transform: uppercase;
+            font-weight: 900;
+            font-size: 26px;
+
+            & span {
+                color: rgb(255, 131, 0);
+            }
+        }
+    }
+
+    & .phone {
+        font-size: 16px;
+        grid-area: phone;
+
+        & svg {
+            margin-right: 10px;
+            font-size: 20px;
+            color: #783cbd;
+        }
+    }
+
+    & .social {
+        grid-area: social;
+
+        & svg {
+            margin-right: 10px;
+            font-size: 30px;
+            color: gray;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .center {
+        grid-template-columns: repeat(2, max-content);
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "logo logo"
+            "phone social";
+    }
+}
+
+@media (max-width: 370px) {
+    .center {
+        grid-template-columns: max-content;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-content: center;
+        grid-template-areas:
+            "logo"
+            "phone"
+            "social";
+
+        & .social {
+            display: flex;
+            justify-content: space-between;
+
+            & svg {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+
+    & .text {
+        margin-right: 10px;
+    }
+
+    & .pay {
+        font-size: 25px;
+        color: gray;
+        
+        & svg {
+            margin-right: 10px;
+        }
+    }
+}
+
+@media (max-width: 432px) {
+    .bottom {
+        justify-content: center;
+        
+        & .text {
+            margin-bottom: 10px;
+        }
+    }
+}

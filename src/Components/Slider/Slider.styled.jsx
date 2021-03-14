@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 let Wrapper = styled.div`
-  margin: 20px 0;
+  margin: 20px 0 40px 0;
   display: flex;
   overflow: hidden;
   position: relative;

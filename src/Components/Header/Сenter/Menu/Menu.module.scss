@@ -1,0 +1,21 @@
+.menu {
+    display: flex;
+    align-items: center;
+    grid-area: menu;
+
+    & div {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
+
+        & svg {
+            margin-right: 10px;
+            font-size: 18px;
+            color: #783cbd;
+        }
+    }
+}

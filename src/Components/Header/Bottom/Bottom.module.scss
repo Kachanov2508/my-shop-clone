@@ -1,0 +1,19 @@
+.row {
+    padding: 10px 0;
+    overflow: hidden;
+
+    & ul {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        font-size: 14px;
+        width: 100%;
+        padding: 0;
+
+        & li {
+            white-space: nowrap;
+            margin-right: 20px;
+        }
+        
+    }
+}

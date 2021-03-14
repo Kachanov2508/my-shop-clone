@@ -9,11 +9,19 @@
 html {
   box-sizing: border-box;
   font-size: 14px;
+  color: #2a3d48;
 }
 
 body {
   margin: 0;
   background-color: #f6f6f6;
+  position: relative;
+}
+
+.bcg-body {
+  background-image: url(./img/product-screen.png);
+  position: absolute;
+  z-index: 9999;
 }
 
 .App {
@@ -25,8 +33,9 @@ figure {
 }
 
 .container {
-  max-width: 1600px;
+  max-width: 1640px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .bgWhite {

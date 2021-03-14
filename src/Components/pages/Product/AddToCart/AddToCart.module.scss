@@ -1,0 +1,70 @@
+.buttons {
+    grid-area: button;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    align-items: center;
+    column-gap: 20px;
+    & .quantity {
+        display: flex;
+        & button {
+            font-size: 14px;
+            padding: 13px 15px;
+            border: 1px solid #cccccc;
+            color: darkgrey;
+            background: none;
+            outline: none;
+            cursor: pointer;
+
+            &:nth-child(1) {
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+            &:nth-child(3) {
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+        }
+        & input {
+            border: 1px solid #cccccc;
+            border-left: none;
+            border-right: none;
+            outline: none;
+            width: 45px;
+            text-align: center;
+            font-size: 16px;
+            color: grey;
+        }
+    }
+
+    & .basket {
+        font-size: 18px;
+
+        & button {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+            background-color: #ff8300;
+            border: none;
+            outline: none;
+            padding: 13px 50px;
+            border-radius: 10px;
+            cursor: pointer;
+
+            & svg {
+                margin-left: 10px;
+            }
+        }
+    }
+
+    & .like {
+        & button {
+            padding: 13px 15px;
+            border: none;
+            background: none;
+            outline: none;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgb(42 61 72 / 15%);
+            cursor: pointer;
+        }
+    }
+}

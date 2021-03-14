@@ -1,19 +1,19 @@
 import React from "react";
 
-import Left from "./Left/Left";
-import Middle from "./Middle/Middle";
-import Right from "./Right/Right";
+import Catalogue from "./Catalogue/Catalogue";
+import Search from "./Search/Search";
+import Menu from "./Menu/Menu";
 
-import Wrapper from "./Сenter.styled";
+import classes from "./Сenter.module.scss";
 
 const Center = () => {
   return (
     <div className="container">
-      <Wrapper>
-        <Left />
-        <Middle />
-        <Right />
-      </Wrapper>
+      <div className={classes.box}>
+        <Catalogue />
+        <Search />
+        <Menu />
+      </div>
     </div>
   );
 };

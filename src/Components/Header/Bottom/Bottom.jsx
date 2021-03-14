@@ -1,12 +1,12 @@
+import classes from "./Bottom.module.scss";
 import React from "react";
-import Wrapper from "./Bottom.styled";
 
 
 
 const Bottom = () => {
   return (
     <div className="container">
-      <Wrapper>
+      <div className={classes.row}>
         <ul>
           <li>Акции</li>
           <li>Myshop.Гид</li>
@@ -19,7 +19,7 @@ const Bottom = () => {
           <li>Доставим бесплатно в PickPoint</li>
           <li>Испанские куклы</li>
         </ul>
-      </Wrapper>
+      </div>
     </div>
   );
 };

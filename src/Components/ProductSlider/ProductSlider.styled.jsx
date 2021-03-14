@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const Bcg = styled.div`
   border-radius: 10px;
+  margin-bottom: 40px;
   & h2 {
     padding: 20px 0 10px 20px;
     font-size: 20px;

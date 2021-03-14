@@ -1,0 +1,74 @@
+// .loaded h1,
+// .grid .loaded {
+//     background-image: linear-gradient(-45deg, rgb(239, 239, 239) 0%, rgba(239, 239, 239, 1) 45%, rgba(247, 247, 247, 1) 50%, rgba(239, 239, 239, 1) 55%, rgba(239, 239, 239, 1) 100%);
+//     background-size: 400% 400%;
+//     animation: AnimationName 1s ease-in-out infinite;
+//     color: transparent;
+// }
+
+
+
+
+
+
+
+.body {
+    max-width: 1140px;
+    margin: 40px auto;
+
+    & h1 {
+        margin-bottom: 20px;
+    }
+
+    .grid {
+        height: 560px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 45px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        align-items: center;
+        column-gap: 45px;
+        row-gap: 20px;
+        grid-template-areas:
+            "image price"
+            "image button"
+            "image delivery"
+            "image info"
+            "image socials";
+
+            & .image {
+                grid-area: image;
+            }
+    
+            & .price {
+                grid-area: price;
+            }
+    
+            & .info {
+                grid-area: info;
+            }
+    
+            & .socials {
+                grid-area: socials;
+            }
+
+        & * {
+            background-image: linear-gradient(-45deg, rgb(239, 239, 239) 0%, rgba(239, 239, 239, 1) 45%, rgba(247, 247, 247, 1) 50%, rgba(239, 239, 239, 1) 55%, rgba(239, 239, 239, 1) 100%);
+            background-size: 400% 400%;
+            animation: AnimationName 1s ease-in-out infinite;
+            color: transparent;
+        }
+
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 100%;
+    }
+    100% {
+        background-position: 0%;
+    }
+}

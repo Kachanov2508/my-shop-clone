@@ -1,0 +1,29 @@
+.box {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr;
+  grid-template-areas: "catalogue search menu";
+  padding: 10px 0;
+  margin-top: 10px;
+}
+
+@media (max-width: 1000px) {
+  .box {
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "catalogue . menu"
+    "search search search";
+  }
+}
+
+@media (max-width: 600px) {
+  .box {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    grid-template-areas: 
+    "catalogue"
+    "menu"
+    "search";
+  }
+}
