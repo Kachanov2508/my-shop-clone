@@ -23,7 +23,7 @@ const Tabs = (props) => {
         if (tab === 2) {
             return (
                 <div className={classes.tabsContent}>
-                    <p>{props.product.length > 0 ? `${props.product[0].description[0].slice(0, 190)}...` : null}</p>
+                    <p>{props.product[0].description ? `${props.product[0].description[0].slice(0, 190)}...` : "Описание отсутствует"}</p>
                 </div>
             );
         }

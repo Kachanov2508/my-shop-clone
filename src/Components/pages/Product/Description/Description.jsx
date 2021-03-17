@@ -9,7 +9,7 @@ const Description = ({product}) => {
             return (
                 <div>
                     <h2>Описание</h2>
-                    <p>{product.description[0] ? product.description[0] : "Описание отсутствует"}</p>
+                    <p>{product.description ? product.description[0] : "Описание отсутствует"}</p>
                 </div>
             );
         }
