@@ -6,7 +6,7 @@ import { faStar } from '@fortawesome/free-regular-svg-icons';
 
 import cls from './Categories.module.css'
 
-import ShowCategories from '../../context';
+import {CategoriesContext} from '../../context';
 import IsFetching from "../isFetching/IsFetching";
 
 const Categories = () => {
@@ -14,7 +14,7 @@ const Categories = () => {
 	const [show, setShow] = useState(0);
 	const [fetching, setFetching] = useState(true);
 
-	const { setShowCategories } = useContext(ShowCategories)
+	const [showCategories, setShowCategories] = useContext(CategoriesContext);
 
 	useEffect(() => {
 		setFetching(true);

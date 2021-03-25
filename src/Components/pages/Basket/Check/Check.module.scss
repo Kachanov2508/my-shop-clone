@@ -1,0 +1,77 @@
+.check {
+    grid-area: check;
+
+    background-color: #ffffff;
+    padding: 20px;
+    position: relative;
+    color: grey;
+
+    & .cartDecor {
+        position: absolute;
+        top: -13px;
+        left: 0;
+    }
+    & .cartDecorBottom {
+        transform: rotateX(180deg);
+        position: absolute;
+        bottom: -13px;
+        left: 0;
+    }
+
+    & .items {
+        & .item {
+            display: flex;
+            margin-bottom: 20px;
+
+            & .name {
+                display: flex;
+                flex-grow: 1;
+                & span {
+                    flex-grow: 1;
+                    border-bottom: 1px dashed darkgray;
+                    margin: 0 5px;
+                }
+            }
+            & .value {
+            }
+
+            & .dateDelivery {
+                color: green;
+                font-weight: 600;
+            }
+        }
+    }
+
+    & .itogo {
+        display: flex;
+        justify-content: space-between;
+        color: #2a3d48;
+        font-weight: 600;
+        margin-top: 40px;
+        padding: 20px 0;
+        border-top: 1px solid darkgrey;
+
+        & span:nth-child(1) {
+            font-size: 16px;
+        }
+        & span:nth-child(2) {
+            font-size: 20px;
+        }
+    }
+
+    & button {
+        width: 100%;
+        border: none;
+        background-color: #ff8300;
+        color: #f7f7f7;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 13px 0;
+        border-radius: 10px;
+        cursor: pointer;
+
+        & svg {
+            margin-left: 10px;
+        }
+    }
+}

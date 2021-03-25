@@ -5,13 +5,12 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 import { Link } from "react-router-dom";
 
-import ShowCategories from '../../../../context';
-
 import classes from "./Catalogue.module.scss";
+import {CategoriesContext} from "../../../../context";
 
 
 const Catalouge = () => {
-  const { setShowCategories } = useContext(ShowCategories);
+  const [showCategories, setShowCategories] = useContext(CategoriesContext);
 
   return (
     <>

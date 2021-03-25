@@ -37,6 +37,11 @@ figure {
   margin: 0 auto;
   padding: 0 20px;
 }
+.container-1200 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
 .bgWhite {
   background-color: #ffffff;

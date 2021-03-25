@@ -38,8 +38,6 @@ const Product = ({ match }) => {
         fetchProductAnalog();
     }, [product]);
 
-    console.log(product);
-
     const showProduct = () => {
         if (product.length > 0) {
             return (
@@ -51,7 +49,7 @@ const Product = ({ match }) => {
                             <div className={classes.price}>
                                 <span>{product[0].price}</span> <span>₽</span>
                             </div>
-                            <AddToCart />
+                            <AddToCart product={product} />
                             <DeliveryDate product={product} />
                             <Tabs product={product} />
                             <Socials />

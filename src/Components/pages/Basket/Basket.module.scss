@@ -1,0 +1,25 @@
+.basket {
+    margin: 40px 0;
+    .heading {
+        margin: 40px 0;
+        h1 {
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 16px;
+            font-weight: 600;
+            color: #55646d;
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 370px;
+        grid-template-rows: max-content 1fr;
+        align-items: start;
+        gap: 20px;
+        grid-template-areas:
+          "sort check"
+          "products check";
+    }
+}

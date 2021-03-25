@@ -1,24 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./AddToCart.module.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faMinus, faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingBasket } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import Quantity from "./Quantity/Quantity";
+import {CartContext} from '../../../../context';
 
-const AddToCart = () => {
+const AddToCart = (props) => {
+
+    const [product, setProduct] = useContext(CartContext);
+
+    function addProduct() {
+        setProduct(prevProduct => [...prevProduct, props.product[0]]);
+    }
+    console.log(product)
+    
     return (
         <div className={classes.buttons}>
-            <div className={classes.quantity}>
-                <button className={classes.left}>
-                    <FontAwesomeIcon icon={faMinus} />
-                </button>
-                <input type="text" placeholder="1" />
-                <button>
-                    <FontAwesomeIcon icon={faPlus} />
-                </button>
-            </div>
+            <Quantity />
             <div className={classes.basket}>
-                <button>
+                <button onClick={addProduct}>
                     <span>В корзину</span>
                     <FontAwesomeIcon icon={faShoppingBasket} />
                 </button>
